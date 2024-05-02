@@ -31,6 +31,24 @@ segundos %= 60;
 minutos %= 60;
 horas %= 24;
 
+if(tempofinal>0){
 return dias + " dias " + horas + " horss " + minutos + " minutos " + segundos + " segundos ";
+} else {
+    return "Objeto Concluido"
+}
+
 
 }
+
+function atualizaCronometro(){
+    for( let i=0; i<contadores.length; i++ ){
+        contadores[i].textContent = calculatempo(tempos[i]);
+    }
+}
+
+function comecaCronometro(){
+    atualizaCronometro();
+    seltInterval(atualizaCronometro, 1000)
+}
+
+//comecaCronometro();
